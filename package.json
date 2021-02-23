@@ -1,0 +1,58 @@
+{
+  "_from": "bungie-net-api@^1.0.6",
+  "_id": "bungie-net-api@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-RmGcUsRJQJxdFLbv6DUjWwQD55U239aYoLakzVGkJVU2X23OhqpzbSyDWZ/ELB59/E6ngvnZfLIUwMxosF3BPg==",
+  "_location": "/bungie-net-api",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "bungie-net-api@^1.0.6",
+    "name": "bungie-net-api",
+    "escapedName": "bungie-net-api",
+    "rawSpec": "^1.0.6",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.6"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/bungie-net-api/-/bungie-net-api-1.0.6.tgz",
+  "_shasum": "cccf4636edbac1ab890f2e212c587f4a330cb9b9",
+  "_spec": "bungie-net-api@^1.0.6",
+  "_where": "Z:\\Dev\\Xandrion2",
+  "author": {
+    "name": "Ty Meador",
+    "email": "ty@tylermeador.com",
+    "url": "https://www.tylermeador.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Native-Coder/node-bungie-lib/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A zero dependency library for the Bungie.net api",
+  "homepage": "https://github.com/Native-Coder/node-bungie-lib#readme",
+  "keywords": [
+    "bungie",
+    "bungie.net",
+    "destiny",
+    "destiny2",
+    "api",
+    "node.js",
+    "library"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "bungie-net-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Native-Coder/node-bungie-lib.git"
+  },
+  "scripts": {
+    "test": "node test start"
+  },
+  "version": "1.0.6"
+}
