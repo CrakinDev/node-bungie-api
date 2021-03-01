@@ -76,7 +76,10 @@ class Destiny2{
 	 * @see {@link https://github.com/vpzed/Destiny2-API-Info/wiki/API-Introduction-Part-3-Manifest|Destiny2 Manifest Intro} for more information
 	 */
 	async downloadManifest( lang = 'en' ){
-		let manifestContent = await this.getMeta().then( Meta => Request.get( this.Endpoints.rootPath + Meta.Response.jsonWorldContentPaths[ lang ], false ) );
+		let manifestContent = ''
+		await this.getMeta().then( async (Meta) => {
+			manifestContent = await Request.get( 'https://www.bungie.net' + Meta.Response.jsonWorldContentPaths[ lang ], false ) 
+		});
 		let path = __dirname + '/manifests/' + lang + '.json';
 		Fs.writeFile( path, JSON.stringify( manifestContent ), err => {
 			if( err ) throw err;
