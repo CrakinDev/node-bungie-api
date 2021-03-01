@@ -92,7 +92,7 @@ class Destiny2{
 	async getMeta(){
 		return new Promise( ( resolve, reject ) => {
 
-			if( this._Meta === null ){
+			if( this._Meta === undefined ){
 				resolve( Request.get( this.Endpoints.rootPath + this.Endpoints.getDestinyManifest ) ).then( Meta => {
 					this._Meta = Meta;
 					return Meta;
