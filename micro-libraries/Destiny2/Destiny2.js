@@ -118,6 +118,10 @@ class Destiny2{
 			.then( endpoint => Reqeuest.get( this.Endpoints.rootPath + endpoint ) );
 	}
 
+	getDestinyManifestDefinition( entityType, hashIdentifier ){
+		return this.Manifest.en[entityType][hashIdentifier];
+	}
+
 	/**
 	 * Returns a list of Destiny memberships given a full Gamertag or PSN ID.
 	 * @param { string } displayName - The full gamertag or PSN id of the player. Spaces and case are ignored.
