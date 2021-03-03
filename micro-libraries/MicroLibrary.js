@@ -402,9 +402,11 @@ async function renderEndpoint( uri, PathParams = {}, QueryStrings = null ){
 		}
 
 		// Add any query strings we were sent
+		let queryString = ''
 		if( typeof QueryStrings == 'object' )
-			rendered += "?" + QueryString.stringify( QueryStrings );
-
+			queryString = QueryString.stringify( QueryStrings );
+		queryString = queryString.replace('%2C', ',')
+		rendered += "?" + queryString
 		resolve( encodeURI( rendered ) );
 	});
 };
