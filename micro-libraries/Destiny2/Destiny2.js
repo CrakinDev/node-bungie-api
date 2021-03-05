@@ -30,17 +30,13 @@ class Destiny2{
 		return readDir( __dirname + '/manifests').then( files => {
 			this.manifestFiles = files;
 			langs.forEach( lang => {
-				if( files.indexOf( lang + '_DestinyActivityDefinition.json' ) !== -1 )
+				if( files.indexOf( lang + '.json' ) !== -1 )
 					proms.push( this.loadManifest( lang ) );
-				
-				// Temp Disabled due to memory size on deployment
-				//else	
-					//proms.push( this.downloadManifest( lang ).then( x => this.loadManifest( lang ) ) );
+				else
+					proms.push( this.downloadManifest( lang ).then( x => this.loadManifest( lang ) ) );
 			} );
 
-			return Promise.all( proms ).then( x => {
-				console.log("Destiny2 initialized") 
-			});
+			return Promise.all( proms ).then( x => "Destiny2 initialized" );
 		} );
 	}
 
@@ -60,8 +56,7 @@ class Destiny2{
 				// Each manifest file is named lang.json. For instance the 'en' manifest JSON file is named en.json.
 				if( lang === 'all' || file === lang + '.json' ){
 					proms.push( readFile( Path.join( startPath, file ) ).then( contents => {
-						console.log("Loading/Parsing Manifest: " + file);
-						console.log("Lang: " + lang);
+						console.log(file)
 						this.Manifest[ lang ] = JSON.parse( contents );
 						return this.Manifest[ lang ];
 					} ) );
