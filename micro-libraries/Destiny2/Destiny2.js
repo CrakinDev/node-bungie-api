@@ -60,6 +60,8 @@ class Destiny2{
 				// Each manifest file is named lang.json. For instance the 'en' manifest JSON file is named en.json.
 				if( lang === 'all' || file === lang + '.json' ){
 					proms.push( readFile( Path.join( startPath, file ) ).then( contents => {
+						console.log("Loading/Parsing Manifest: " + file);
+						console.log("Lang: " + lang);
 						this.Manifest[ lang ] = JSON.parse( contents );
 						return this.Manifest[ lang ];
 					} ) );
