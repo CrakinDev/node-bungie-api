@@ -120,7 +120,7 @@ class Destiny2{
 	}
 
 	getDestinyManifestDefinition( entityType, hashIdentifier ){
-		return this.Manifest.en[entityType][hashIdentifier];
+		return this.Manifest.en[hashIdentifier];
 	}
 
 	/**
